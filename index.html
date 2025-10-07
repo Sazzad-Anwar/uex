@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./public/images/logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./src/output.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/trig-js/src/trig-animations.min.css">
+  </link>
+
+  <title>uex</title>
+</head>
+
+<body class="">
+  <header class="flex justify-between items-center py-6 w-full lg:py-7 md:container px-3 lg:px-0 md:mx-auto">
+    <div class="flex items-center justify-center lg:justify-start gap-10">
+      <a href="/" class="h-6 w-auto">
+        <img src="./public/images/logo.svg" alt="UEX Logo" class="h-6 w-auto" />
+      </a>
+      <nav class="hidden lg:block">
+        <ul class="flex gap-8">
+          <li>
+            <a class="font-medium text-base" href="/">Products</a>
+          </li>
+          <li>
+            <a class="font-medium text-base" href="/">About</a>
+          </li>
+          <li>
+            <a class="font-medium text-base" href="/">Rates</a>
+          </li>
+          <li>
+            <a class="font-medium text-base" href="/">Flexible savings</a>
+          </li>
+          <li>
+            <a class="font-medium text-base" href="/">Premium tiers</a>
+          </li>
+          <li>
+            <a class="font-medium text-base" href="/"></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div class="flex items-center justify-center gap-3 lg:gap-6">
+      <a href="/" class="text-base hidden lg:block font-semibold">Sign Up</a>
+      <a href="/" class="button">Login</a>
+      <button class="lg:hidden text-2xl hover:bg-lime-500">
+        <i class="bi bi-list"></i>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero-section"
+      class="flex flex-col pt-6 md:pt-12 items-center mx-auto pb-20 border-color border-b hero-bg">
+      <div class="w-full md:w-[520px] mx-auto px-3">
+        <div
+          class="trig-fade enable-trig py-2 px-4 rounded-full border border-gray-200  bg-lime-100 trig-target w-full">
+          <h4 class="font-medium text-xs md:text-base text-color text-center w-full">
+            UEX Savings: Secure. Transparent. Soft Custody.
+          </h4>
+        </div>
+        <h1 class="trig-fade enable-trig trig-target font-bold mx-11 text-[30px]
+          md:text-[40px] lg:text-[42px] text-center my-8 leading-[110%] md:leading-[100%] tracking-[-5%]">
+          Earn 5% on USD, 3.5% on Crypto, No Lock-Ups.
+        </h1>
+        <p
+          class="trig-fade enable-trig trig-target font-medium text-base mb-7 text-center text-color leading-[150%] tracking-[-2%]">
+          Want to learn more about UEX Savings Accounts?
+          Share you information below & our team will be in touch.
+        </p>
+
+        <!-- form -->
+        <div class="trig-fade-up enable-trig trig-target bg-white rounded-2xl shadow-2xl border border-gray-100 p-6">
+          <h3 class="font-bold text-lg text-color">Reserve Your Spot</h3>
+          <hr class="w-full border border-[#0015451A]/50 my-4" />
+
+          <form onsubmit="event.preventDefault()" class="space-y-6">
+            <div class="space-y-[6px]">
+              <label class="font-semibold text-xs">Name</label>
+              <div class="flex justify-between items-center gap-4">
+                <input placeholder="eg. John"
+                  class="w-full transition-all ease-linear duration-150 focus-visible:outline-1 focus-visible:outline-[#0015451A] px-2 border rounded-lg h-9 border-color" />
+                <input placeholder="eg. Doe"
+                  class="w-full transition-all ease-linear duration-150 focus-visible:outline-1 focus-visible:outline-[#0015451A] px-2 border rounded-lg h-9 border-color" />
+              </div>
+            </div>
+            <div class="space-y-[6px]">
+              <label class="font-semibold text-xs">Email</label>
+              <input placeholder="eg. john@example.com"
+                class="w-full text-base px-2 border focus-visible:outline-1 focus-visible:outline-[#0015451A] transition-all ease-linear duration-150 rounded-lg h-9 border-color" />
+            </div>
+            <div class="space-y-[6px]">
+              <label class="font-semibold text-xs">Phone</label>
+              <input placeholder="eg. +1 234 567 890"
+                class="w-full text-base px-2 border focus-visible:outline-1 focus-visible:outline-[#0015451A] transition-all ease-linear duration-150 rounded-lg h-9 border-color" />
+            </div>
+
+            <button type="submit"
+              class="button w-full font-bold leading-[150%] tracking-[-5%] text-lg flex justify-center items-center gap-2">
+              <span>
+
+                Request More Info
+              </span>
+              <i class="bi bi-arrow-right-short text-lg"></i>
+            </button>
+          </form>
+        </div>
+        <!-- form -->
+        <hr class="w-[146px] mx-auto border border-transparent md:border-[#0015451A]/50 my-5 md:my-10" />
+
+        <!-- want more loans -->
+        <div
+          class="trig-fade-up enable-trig trig-target p-6 border rounded-2xl border-color shadow-sm bg-white trig-fade-up enable-trig trig-target">
+          <h3 class="font-semibold text-[28px] leading-[110%] tracking-[-5%] text-color mb-4">
+            Want More Info On UEX Loans?
+          </h3>
+          <p class="font-medium text-base leading-[150%] tracking-[-2%] text-color mb-6">
+            Schdule a call with our sales team to lean more and explore excludive custom long-term saving tiers.
+          </p>
+          <button class="button-secondary w-full">
+            <span>Schedule A Consultation Now</span>
+            <i class="bi bi-arrow-right-short text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2 -->
+    <section class="py-48 container mx-auto">
+      <div class="flex justify-center items-center gap-8">
+        <h2
+          class="trig-fade enable-trig trig-target font-semibold text-4xl w-1/2 leading-[110%] tracking-[-5%] text-color text-center">
+          Powerful savings solutions for you
+        </h2>
+        <p
+          class="trig-fade enable-trig trig-target font-medium text-base w-1/2 leading-[150%] tracking-[-2%] text-[#585858]">
+          Open a savings account and start growing your money with attractive interest rates. All earnings are clearly
+          visible in your transaction history and remain easily accessible.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 py-16">
+        <div class="flex flex-col justify-center items-center space-y-8 p-[68px] mx-auto border-r border-color">
+          <img style="--trig-delay:0.2s" src="./public/images/daily-growth.svg"
+            class="size-14 mx-auto trig-fade enable-trig trig-target" alt="daily-growth" />
+          <div style="--trig-delay:0.3s" class="trig-fade-up enable-trig trig-target">
+            <div class="flex flex-col justify-center items-center gap-3 ">
+              <h4 class="font-bold text-xl">Daily Growth</h4>
+              <p class="font-medium text-base leading-[140p%] tracking-[-2%] text-center text-[#585858]">5% USD and 3.5%
+                crypto yields
+                paid daily.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="flex flex-col justify-center items-center space-y-8 mx-auto p-[68px] border-r border-color">
+          <img style="--trig-delay:0.5s" src="./public/images/flex-or-commit.svg"
+            class="size-14 mx-auto trig-fade enable-trig trig-target " alt="flex-or-commit" />
+          <div style="--trig-delay:0.6s" class="trig-fade-up enable-trig trig-target ">
+            <div class="flex flex-col justify-center items-center gap-3">
+              <h4 class="font-bold text-xl">Flex or Commit</h4>
+              <p class="font-medium text-base leading-[140p%] tracking-[-2%] text-center text-[#585858]">Withdraw
+                anytime.
+                No early repayment penalties.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="flex flex-col justify-center items-center space-y-8 mx-auto p-[68px] border-r border-color">
+          <img style="--trig-delay:0.7s" src="./public/images/secure&regualted.svg"
+            class="size-14 mx-auto trig-fade enable-trig trig-target " alt="secure&regulated" />
+          <div class="trig-fade-up enable-trig trig-target" style="--trig-delay:0.8s">
+            <div class="flex flex-col justify-center items-center gap-3">
+              <h4 class="font-bold text-xl text-center">Secure & Regulated</h4>
+              <p class="font-medium text-base leading-[140p%] tracking-[-2%] text-center text-[#585858]">U.S.
+                MSB-registered, full
+                AML/KYC compliance.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="flex flex-col justify-center items-center space-y-8 mx-auto p-[68px] ">
+          <img style="--trig-delay:0.9s" src="./public/images/exclusive-access.svg"
+            class="size-14 mx-auto trig-fade enable-trig trig-target " alt="exclusive-access" />
+          <div style="--trig-delay:0.9s" class="trig-fade-up enable-trig trig-target ">
+            <div class="flex flex-col justify-center items-center gap-3">
+              <h4 class="font-bold text-xl text-center">Exclusive Access</h4>
+              <p class="font-medium text-base leading-[140p%] tracking-[-2%] text-center text-[#585858]">$100k+
+                portfolio
+                or 20M $C4 required.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <div style="--trig-delay:1.1s" class="trig-fade-up enable-trig flex justify-center items-center">
+        <button class="button trig-target ">
+          <span>Apply For A Savings Account</span>
+          <i class="bi bi-arrow-right-short text-lg"></i>
+        </button>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- Scripts -->
+  <script src="./src/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/trig-js/src/trig.min.js"></script>
+</body>
+
+</html>

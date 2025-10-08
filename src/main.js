@@ -22,7 +22,7 @@ window.addEventListener('resize', () => {
 
 document.addEventListener('alpine:init', () => {
   Alpine.store('comparison', {
-    activeTab: 1,
+    activeTab: 2,
     tabs: [
       {
         id: 1,

@@ -252,11 +252,11 @@
     @media (width >= 64rem) {
       max-width: 64rem;
     }
-    @media (width >= 75rem) {
-      max-width: 75rem;
+    @media (width >= 80rem) {
+      max-width: 80rem;
     }
-    @media (width >= 96rem) {
-      max-width: 96rem;
+    @media (width >= 80rem) {
+      max-width: 80rem;
     }
   }
   .m-285 {
@@ -649,6 +649,9 @@
   .py-20 {
     padding-block: calc(var(--spacing) * 20);
   }
+  .py-24 {
+    padding-block: calc(var(--spacing) * 24);
+  }
   .py-40 {
     padding-block: calc(var(--spacing) * 40);
   }
@@ -954,6 +957,11 @@
       height: calc(var(--spacing) * 4);
     }
   }
+  .md\:h-\[170px\] {
+    @media (width >= 48rem) {
+      height: 170px;
+    }
+  }
   .md\:h-\[354px\] {
     @media (width >= 48rem) {
       height: 354px;
@@ -1068,6 +1076,11 @@
   .md\:p-\[40px\] {
     @media (width >= 48rem) {
       padding: 40px;
+    }
+  }
+  .md\:px-\[40px\] {
+    @media (width >= 48rem) {
+      padding-inline: 40px;
     }
   }
   .md\:py-7 {
@@ -1187,6 +1200,11 @@
       display: none;
     }
   }
+  .lg\:h-\[170px\] {
+    @media (width >= 64rem) {
+      height: 170px;
+    }
+  }
   .lg\:w-\[40\%\] {
     @media (width >= 64rem) {
       width: 40%;
@@ -1227,6 +1245,11 @@
       padding-block: calc(var(--spacing) * 7);
     }
   }
+  .lg\:py-36 {
+    @media (width >= 64rem) {
+      padding-block: calc(var(--spacing) * 36);
+    }
+  }
   .lg\:pl-24 {
     @media (width >= 64rem) {
       padding-left: calc(var(--spacing) * 24);
@@ -1243,74 +1266,134 @@
       font-size: 42px;
     }
   }
-  .xl\:left-\[130px\] {
-    @media (width >= 75rem) {
-      left: 130px;
-    }
-  }
-  .xl\:left-\[320px\] {
-    @media (width >= 75rem) {
-      left: 320px;
-    }
-  }
-  .xl\:w-\[35\%\] {
-    @media (width >= 75rem) {
-      width: 35%;
-    }
-  }
-  .xl\:border-r {
-    @media (width >= 75rem) {
-      border-right-style: var(--tw-border-style);
-      border-right-width: 1px;
-    }
-  }
   .\32 xl\:left-64 {
-    @media (width >= 96rem) {
+    @media (width >= 80rem) {
       left: calc(var(--spacing) * 64);
     }
   }
   .\32 xl\:left-\[200px\] {
-    @media (width >= 96rem) {
+    @media (width >= 80rem) {
       left: 200px;
     }
   }
   .\32 xl\:left-\[400px\] {
-    @media (width >= 96rem) {
+    @media (width >= 80rem) {
       left: 400px;
     }
   }
   .\32 xl\:left-\[450px\] {
-    @media (width >= 96rem) {
+    @media (width >= 80rem) {
+      left: 450px;
+    }
+  }
+  .xl\:left-40 {
+    @media (width >= 80rem) {
+      left: calc(var(--spacing) * 40);
+    }
+  }
+  .xl\:left-44 {
+    @media (width >= 80rem) {
+      left: calc(var(--spacing) * 44);
+    }
+  }
+  .xl\:left-56 {
+    @media (width >= 80rem) {
+      left: calc(var(--spacing) * 56);
+    }
+  }
+  .xl\:left-64 {
+    @media (width >= 80rem) {
+      left: calc(var(--spacing) * 64);
+    }
+  }
+  .xl\:left-\[130px\] {
+    @media (width >= 80rem) {
+      left: 130px;
+    }
+  }
+  .xl\:left-\[160px\] {
+    @media (width >= 80rem) {
+      left: 160px;
+    }
+  }
+  .xl\:left-\[170px\] {
+    @media (width >= 80rem) {
+      left: 170px;
+    }
+  }
+  .xl\:left-\[320px\] {
+    @media (width >= 80rem) {
+      left: 320px;
+    }
+  }
+  .xl\:left-\[380px\] {
+    @media (width >= 80rem) {
+      left: 380px;
+    }
+  }
+  .xl\:left-\[400px\] {
+    @media (width >= 80rem) {
+      left: 400px;
+    }
+  }
+  .xl\:left-\[450px\] {
+    @media (width >= 80rem) {
       left: 450px;
     }
   }
   .\32 xl\:w-\[40\%\] {
-    @media (width >= 96rem) {
+    @media (width >= 80rem) {
       width: 40%;
     }
   }
   .\32 xl\:w-\[60\%\] {
-    @media (width >= 96rem) {
+    @media (width >= 80rem) {
       width: 60%;
     }
   }
   .\32 xl\:w-\[90\%\] {
-    @media (width >= 96rem) {
+    @media (width >= 80rem) {
       width: 90%;
     }
   }
+  .xl\:w-\[35\%\] {
+    @media (width >= 80rem) {
+      width: 35%;
+    }
+  }
+  .xl\:w-\[90\%\] {
+    @media (width >= 80rem) {
+      width: 90%;
+    }
+  }
+  .xl\:w-full {
+    @media (width >= 80rem) {
+      width: 100%;
+    }
+  }
+  .xl\:border-r {
+    @media (width >= 80rem) {
+      border-right-style: var(--tw-border-style);
+      border-right-width: 1px;
+    }
+  }
   .\32 xl\:p-\[68px\] {
-    @media (width >= 96rem) {
+    @media (width >= 80rem) {
       padding: 68px;
     }
   }
+  .\32 xl\:px-\[68px\] {
+    @media (width >= 80rem) {
+      padding-inline: 68px;
+    }
+  }
   .\32 xl\:pr-60 {
-    @media (width >= 96rem) {
+    @media (width >= 80rem) {
       padding-right: calc(var(--spacing) * 60);
     }
   }
   .\32 xl\:pr-64 {
-    @media (width >= 96rem) {
+    @media (width >= 80rem) {
       padding-right: calc(var(--spacing) * 64);
     }
   }

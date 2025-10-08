@@ -259,7 +259,7 @@
   --breakpoint-sm: 40rem;
   --breakpoint-md: 48rem;
   --breakpoint-lg: 64rem;
-  --breakpoint-xl: 80rem;
+  --breakpoint-xl: 75rem;
   --breakpoint-2xl: 96rem;
   --container-3xs: 16rem;
   --container-2xs: 18rem;
@@ -412,7 +412,7 @@
 
 @layer utilities {
   .button {
-    @apply bg-lime-500 active:scale-95 scale-100 hover:bg-lime-400 transition-all ease-linear duration-150 rounded-full font-semibold text-base px-6 py-2;
+    @apply bg-lime-500 active:scale-95 scale-100 hover:bg-lime-400 transition-all ease-linear duration-150 rounded-full font-semibold text-sm md:text-base px-6 py-2;
   }
   .button-secondary {
     @apply bg-navy active:scale-95 scale-100 hover:bg-navy/80 transition-all ease-linear duration-150 rounded-full font-semibold text-base px-4 py-2 text-white;

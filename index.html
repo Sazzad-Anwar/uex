@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="./public/images/logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./src/output.css" />
+  <link rel="stylesheet" href="./src/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -1178,7 +1178,7 @@
                 </span>
               </div>
               <button
-                class="mt-2 text-[6px] rounded-xl md:text-xs w-full bg-lime-500 active:scale-95 scale-100 hover:bg-lime-400 transition-all ease-linear duration-150 font-semibold text-sm  px-6 py-3">Deposit</button>
+                class="mt-2 rounded-xl text-xs w-full bg-lime-500 active:scale-95 scale-100 hover:bg-lime-400 transition-all ease-linear duration-150 font-semibold px-6 py-3">Deposit</button>
             </div>
           </div>
 
@@ -1247,7 +1247,7 @@
       </div>
 
       <!-- Masonry Style Testimonials -->
-      <div x-data="masonryTestimonials()" class="relative">
+      <div x-data="masonryTestimonials()" class="relative mt-10">
         <!-- Masonry Grid Container -->
         <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6"
           :style="showAll ? '' : 'max-height: 1000px; overflow: hidden;'">
@@ -1290,19 +1290,294 @@
         </div>
 
         <!-- Load More / Show Less Button -->
-        <div :class="{'lg:mt-20 mt-10': showAll, 'mt-2': !showAll}" class="flex justify-center gap-6">
-          <button @click="toggleShowAll()"
-            class="active:scale-95 scale-100 hover:bg-white/80 transition-all ease-linear duration-150 rounded-full font-semibold text-sm md:text-base px-6 py-2 flex items-center gap-2 bg-white shadow-lg drop-shadow-lg">
-            <span x-text="showAll ? 'Show Less' : 'Load More'"></span>
-            <i class="bi bi-arrow-right-short text-lg"></i>
-          </button>
-          <button class="button flex items-center gap-2 shadow-lg drop-shadow-lg">
-            Get Early Access
-            <i class="bi bi-arrow-right-short text-lg"></i>
-          </button>
+        <div :class="{'lg:mt-20 mt-10': showAll, 'mt-2': !showAll}" class="flex justify-center gap-2 md:gap-6">
+          <div>
+            <button @click="toggleShowAll()"
+              class="active:scale-95 w-auto scale-100 hover:bg-white/80 transition-all ease-linear duration-150 rounded-full font-semibold text-sm md:text-base px-6 py-2 flex items-center gap-2 bg-white shadow-lg drop-shadow-lg">
+              <span x-text="showAll ? 'Show Less' : 'Load More'"></span>
+              <i class="bi bi-arrow-right-short text-lg"></i>
+            </button>
+          </div>
+          <div>
+            <button class="button flex items-center gap-2 shadow-lg drop-shadow-lg">
+              Get Early Access
+              <i class="bi bi-arrow-right-short text-lg"></i>
+            </button>
+          </div>
+
         </div>
       </div>
     </section>
+
+    <!-- Call to Action Section -->
+    <section class="bg-[#D9FF6B] relative">
+      <div class="container mx-auto pl-4 pr-0 md:pl-4 md:pr-4 md:pb-28 pt-28 pb-6">
+        <div class="flex md:flex-row flex-col justify-between items-center gap-10 md:gap-28">
+          <div>
+            <div class="trig-reveal-left enable-trig">
+              <h1
+                class="font-bold text-4xl md:text-4xl lg:text-[56px] leading-[100%] tracking-[-5%] text-color trig-target">
+                Exclusive Yields. Built for Serious Investors
+              </h1>
+            </div>
+
+            <div class="pt-8 md:pt-4 lg:pt-8">
+              <ul class="list-none space-y-2">
+                <li class="trig-reveal-left enable-trig">
+                  <span class="trig-target">
+                    <span class="flex items-center gap-2">
+                      <img class="size-4" src="./public/images/check-circle.svg" />
+                      <p class="font-medium text-sm leading-[150%] tracking-[-2%]">
+                        Flexible: 5% on USD, 3.5% on crypto — withdraw anytime
+                      </p>
+                    </span>
+                  </span>
+                </li>
+                <li class="trig-reveal-left enable-trig">
+                  <span class="trig-target">
+                    <span class="flex items-center gap-2">
+                      <img class="size-4" src="./public/images/check-circle.svg" />
+                      <p class="font-medium text-sm leading-[150%] tracking-[-2%]">
+                        Earn: ~10x higher APY than most banks
+                      </p>
+                    </span>
+                  </span>
+                </li>
+                <li class="trig-reveal-left enable-trig">
+                  <span class="trig-target">
+                    <span class="flex items-center gap-2">
+                      <img class="size-4" src="./public/images/check-circle.svg" />
+                      <p class="font-medium text-sm leading-[150%] tracking-[-2%]">
+                        U.S.-regulated. Secure. Transparent.
+                      </p>
+                    </span>
+                  </span>
+                </li>
+              </ul>
+
+              <div class="trig-fade-up enable-trig">
+                <button class="button-secondary mt-8 trig-target">
+                  <span>Apply For Saving Account</span>
+                  <i class="bi bi-arrow-right-short text-lg"></i>
+                </button>
+              </div>
+
+            </div>
+          </div>
+          <div class="h-[222px] lg:h-[400px] w-full hidden md:block">
+            <img src="./public/images/big-logo.svg" class="h-[222px] lg:h-[400px] absolute right-0 w-auto" />
+          </div>
+          <div class="h-40 w-full block md:hidden">
+            <img src="./public/images/uex-small-green-logo.svg" class=" h-full w-auto ml-auto" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- footer -->
+    <footer style="background-image: url('./public/images/footer-bg.svg');" class="bg-cover pt-20 pb-10">
+      <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center">
+          <img class="h-8 w-auto" src="./public/images/small-logo.svg" alt="logo" />
+          <ul x-data="socialLinks()" class="list-none flex items-center space-x-3">
+            <template x-for="(link, index) in links" :key="index">
+              <li class="group">
+                <a :href="link.url" target="_blank" class="size-6 mx-2">
+                  <img :src="link.icon"
+                    class="group-hover:brightness-100 transition-all duration-150 ease-linear size-6 brightness-50" />
+                </a>
+              </li>
+            </template>
+          </ul>
+        </div>
+
+        <div class="pt-20 pb-10 grid grid-cols-2 md:grid-cols-4">
+          <div class="space-y-4 mb-10 md:mb-0">
+            <ul class="list-none space-y-4">
+              <li class="font-medium text-sm leading-[100%] tracking-[2%] text-[#AFAFAF]">
+                LINKS
+              </li>
+              <li>
+                <a href="#"
+                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
+                  Products
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
+                  Rates
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
+                  Flexible Savings
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
+                  Premium tiers
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
+                  Institutional
+                </a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="space-y-4 mb-10 md:mb-0">
+            <ul class="list-none space-y-4">
+              <li class="font-medium text-sm leading-[100%] tracking-[2%] text-[#AFAFAF]">
+                LINKS
+              </li>
+              <li>
+                <a href="#"
+                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
+                  Products
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
+                  Rates
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
+                  Flexible Savings
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
+                  Premium tiers
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
+                  Institutional
+                </a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="space-y-4 mb-10 md:mb-0">
+            <ul class="list-none space-y-4">
+              <li class="font-medium text-sm leading-[100%] tracking-[2%] text-[#AFAFAF]">
+                LINKS
+              </li>
+              <li>
+                <a href="#"
+                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
+                  Products
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
+                  Rates
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
+                  Flexible Savings
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
+                  Premium tiers
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
+                  Institutional
+                </a>
+              </li>
+            </ul>
+
+          </div>
+          <div class="space-y-4 mb-10 md:mb-0">
+            <ul class="list-none space-y-4">
+              <li class="font-medium text-sm leading-[100%] tracking-[2%] text-[#AFAFAF]">
+                LINKS
+              </li>
+              <li>
+                <a href="#"
+                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
+                  Products
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
+                  Rates
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
+                  Flexible Savings
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
+                  Premium tiers
+                </a>
+              </li>
+              <li>
+                <a href="#"
+                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
+                  Institutional
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
+          <p class="font-medium text-sm text-[#B0B0B0]">
+            <i class="bi bi-c-circle text-base"></i>
+            2025 UEX High Yield Savings. All
+            rights reserved.
+          </p>
+          <a href="#" class="font-medium text-sm text-[#B0B0B0]">A UEX Company</a>
+        </div>
+      </div>
+    </footer>
   </main>
 
   <!-- Scripts -->

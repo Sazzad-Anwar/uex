@@ -408,6 +408,9 @@
   body {
     font-family: 'Inter', sans-serif;
   }
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @layer utilities {

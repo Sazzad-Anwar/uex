@@ -343,4 +343,44 @@ document.addEventListener('alpine:init', () => {
       this.showAll = !this.showAll
     },
   }))
+
+  Alpine.data('socialLinks', () => ({
+    links: [
+      {
+        name: 'Facebook',
+        url: 'https://www.facebook.com',
+        icon: './public/images/facebook.svg',
+      },
+      {
+        name: 'X',
+        url: 'https://www.x.com',
+        icon: './public/images/x.svg',
+      },
+      {
+        name: 'Instagram',
+        url: 'https://www.instagram.com',
+        icon: './public/images/instagram.svg',
+      },
+      {
+        name: 'LinkedIn',
+        url: 'https://www.linkedin.com',
+        icon: './public/images/linkedin.svg',
+      },
+      {
+        name: 'Thread',
+        url: 'https://www.threads.net',
+        icon: './public/images/thread.svg',
+      },
+      {
+        name: 'Whatsapp',
+        url: 'https://www.whatsapp.com',
+        icon: './public/images/whatsapp.svg',
+      },
+      {
+        name: 'YouTube',
+        url: 'https://www.youtube.com',
+        icon: './public/images/youtube.svg',
+      },
+    ],
+  }))
 })

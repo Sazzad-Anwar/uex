@@ -83,4 +83,49 @@ document.addEventListener('alpine:init', () => {
         this.faq[index].isOpen = !this.faq[index].isOpen
       },
     })
+
+  // Range Slider Component
+  Alpine.data('rangeSlider', () => ({
+    value: 20000,
+    min: 0,
+    max: 40000,
+    progress: 50,
+    tooltipPosition: 0,
+
+    init() {
+      this.$watch('value', () => {
+        this.updateProgress()
+        this.updateTooltipPosition()
+      })
+
+      // Initial setup
+      this.$nextTick(() => {
+        this.updateProgress()
+        this.updateTooltipPosition()
+      })
+    },
+
+    updateProgress() {
+      this.progress = ((this.value - this.min) / (this.max - this.min)) * 100
+      this.$el
+        .querySelector('input[type="range"]')
+        .style.setProperty('--progress', `${this.progress}%`)
+    },
+
+    updateTooltipPosition() {
+      const slider = this.$refs.slider
+      if (!slider) return
+
+      const sliderRect = slider.getBoundingClientRect()
+      const sliderWidth = sliderRect.width
+
+      // Account for the thumb width (approximately 20px) and padding
+      const thumbWidth = 20
+      const effectiveWidth = sliderWidth - thumbWidth
+      const progressRatio = (this.value - this.min) / (this.max - this.min)
+
+      // Calculate position with proper offset for thumb center
+      this.tooltipPosition = thumbWidth / 2 + effectiveWidth * progressRatio
+    },
+  }))
 })

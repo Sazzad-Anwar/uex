@@ -692,7 +692,7 @@
     </section>
 
     <!-- Automatically Daily Savings -->
-    <section class="container py-40 mx-auto px-4">
+    <section class="container py-20 mx-auto px-4">
       <div class="flex flex-col lg:flex-row justify-between items-start md:items-center">
         <div class="w-full lg:w-1/2">
           <div class="space-y-4 mb-11 md:mb-0 flex flex-col pb-4 md:pb-6">
@@ -771,7 +771,7 @@
     </section>
 
     <!-- Comparison Section -->
-    <section class="container mx-auto px-4 pb-20">
+    <section class="container mx-auto px-4 py-20">
       <div class="flex flex-col justify-center items-start md:items-center gap-4">
         <div
           class="trig-fade text-center enable-trig w-32 trig-target px-4 py-2 rounded-full text-xs font-medium border border-color bg-lime-100">
@@ -1226,6 +1226,82 @@
             </template>
           </div>
         </div>
+    </section>
+
+
+    <!-- investor's Say -->
+    <section class="container mx-auto py-20 px-4">
+      <div class="flex flex-col justify-center items-start md:items-center gap-4 pb-4 md:pb-6">
+        <div
+          class="trig-fade enable-trig trig-target px-4 py-2 rounded-full text-xs font-medium border border-color bg-lime-100">
+          Testimonials
+        </div>
+        <h3 style="--trig-delay:0.2s"
+          class="trig-reveal-left enable-trig trig-target font-bold text-3xl md:text-5xl leading-[110%] tracking-[-5%] text-color">
+          Whato our investors say
+        </h3>
+        <p style="--trig-delay:0.3s"
+          class="trig-reveal-left enable-trig trig-target font-medium text-base leading-[150%] tracking-[-2%] text-[#585858]">
+          Real experiences from investors who have transformed their financial strategies
+        </p>
+      </div>
+
+      <!-- Masonry Style Testimonials -->
+      <div x-data="masonryTestimonials()" class="relative">
+        <!-- Masonry Grid Container -->
+        <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6"
+          :style="showAll ? '' : 'max-height: 1000px; overflow: hidden;'">
+          <template x-for="(testimonial, index) in (showAll ? testimonials : visibleTestimonials)" :key="index">
+            <div class="break-inside-avoid mb-6">
+              <div :class="{'bg-[#001545]': testimonial.image, 'bg-transparent': !testimonial.image }"
+                class="rounded-2xl p-6 border border-color overflow-hidden">
+
+                <template x-if="testimonial.image">
+                  <img :src="testimonial.image" :alt="testimonial.name" class="w-full h-auto rounded-lg" />
+                </template>
+
+                <template x-if="!testimonial.image">
+                  <!-- Testimonial Content -->
+                  <p class="font-semibold text-xl text-color pb-6 border-b border-color" x-text="testimonial.content">
+                  </p>
+
+                </template>
+
+
+
+                <!-- Profile Section -->
+                <div class="flex justify-between items-center mt-6">
+                  <div class="space-y-px">
+                    <h5 :class="{'text-white': testimonial.image, 'text-color': !testimonial.image}"
+                      class="font-semibold text-base leading-[130%] tracking-[-2%]" x-text="testimonial.name"></h5>
+                    <p :class="{'text-white': testimonial.image, 'text-color': !testimonial.image}"
+                      class="font-light text-xs leading-[130%] tracking-[-2%]" x-text="testimonial.position"></p>
+                  </div>
+                  <img class="size-10 rounded-full" :src="testimonial.avatar" :alt="testimonial.name" />
+                </div>
+              </div>
+            </div>
+          </template>
+        </div>
+
+        <!-- Fade Overlay (shown when not expanded) -->
+        <div x-show="!showAll" x-transition.opacity.duration.500ms
+          class="absolute bottom-0 left-0 right-0 h-64 lg:h-96 bg-gradient-to-t from-[#F6F6F6] via-[#F6F6F6]  to-transparent backdrop-opacity-70  pointer-events-none">
+        </div>
+
+        <!-- Load More / Show Less Button -->
+        <div :class="{'lg:mt-20 mt-10': showAll, 'mt-2': !showAll}" class="flex justify-center gap-6">
+          <button @click="toggleShowAll()"
+            class="active:scale-95 scale-100 hover:bg-white/80 transition-all ease-linear duration-150 rounded-full font-semibold text-sm md:text-base px-6 py-2 flex items-center gap-2 bg-white shadow-lg drop-shadow-lg">
+            <span x-text="showAll ? 'Show Less' : 'Load More'"></span>
+            <i class="bi bi-arrow-right-short text-lg"></i>
+          </button>
+          <button class="button flex items-center gap-2 shadow-lg drop-shadow-lg">
+            Get Early Access
+            <i class="bi bi-arrow-right-short text-lg"></i>
+          </button>
+        </div>
+      </div>
     </section>
   </main>
 

@@ -89,41 +89,61 @@ document.addEventListener('alpine:init', () => {
     max: 40000,
     progress: 50,
     tooltipPosition: 0,
+    sliderWidth: 0,
 
     init() {
       this.$watch('value', () => {
         this.updateProgress()
-        this.updateTooltipPosition()
+        this.updateTooltipPositionFast()
       })
 
       // Initial setup
       this.$nextTick(() => {
+        this.cacheSliderWidth()
         this.updateProgress()
-        this.updateTooltipPosition()
+        this.updateTooltipPositionFast()
+
+        // Update slider width on resize
+        window.addEventListener('resize', () => {
+          this.cacheSliderWidth()
+          this.updateTooltipPositionFast()
+        })
       })
+    },
+
+    cacheSliderWidth() {
+      const slider = this.$refs.slider
+      if (slider) {
+        this.sliderWidth = slider.offsetWidth
+      }
     },
 
     updateProgress() {
       this.progress = ((this.value - this.min) / (this.max - this.min)) * 100
-      this.$el
-        .querySelector('input[type="range"]')
-        .style.setProperty('--progress', `${this.progress}%`)
     },
 
-    updateTooltipPosition() {
-      const slider = this.$refs.slider
-      if (!slider) return
-
-      const sliderRect = slider.getBoundingClientRect()
-      const sliderWidth = sliderRect.width
+    updateTooltipPositionFast() {
+      // Use current slider width directly if not cached
+      if (!this.sliderWidth) {
+        const slider = this.$refs.slider
+        if (slider) {
+          this.sliderWidth = slider.offsetWidth
+        } else {
+          return
+        }
+      }
 
       // Account for the thumb width (approximately 20px) and padding
       const thumbWidth = 20
-      const effectiveWidth = sliderWidth - thumbWidth
+      const effectiveWidth = this.sliderWidth - thumbWidth
       const progressRatio = (this.value - this.min) / (this.max - this.min)
 
-      // Calculate position with proper offset for thumb center
+      // Calculate position with proper offset for thumb center - direct calculation
       this.tooltipPosition = thumbWidth / 2 + effectiveWidth * progressRatio
+    },
+    updateTooltipPosition() {
+      // Legacy method for compatibility - just call the fast version
+      this.updateTooltipPositionFast()
     },
   }))
 

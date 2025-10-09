@@ -1,9 +1,7 @@
-console.log('Hello, World!')
 const heroSection = document.getElementById('hero-section')
 
 const setHeroBackground = () => {
   if (window.innerWidth < 768) {
-    console.log(heroSection)
     heroSection.style.backgroundImage =
       "url('./public/images/hero-bg-mobile-new.svg')"
     heroSection.style.backgroundSize = 'contain'
@@ -343,7 +341,12 @@ document.addEventListener('alpine:init', () => {
       this.showAll = !this.showAll
     },
   }))
-
+  Alpine.data('menu', () => ({
+    isOpen: false,
+    toggle() {
+      this.isOpen = !this.isOpen
+    },
+  }))
   Alpine.data('socialLinks', () => ({
     links: [
       {

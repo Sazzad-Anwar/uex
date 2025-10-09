@@ -60,41 +60,44 @@
   </header>
 
   <!-- mobile menu -->
-  <aside x-cloak x-show="isOpen" x-transition:enter="transition ease-out duration-300"
-    x-transition:enter-start="right-[-100%]" x-transition:enter-end="right-0"
-    x-transition:leave="transition ease-in duration-300" x-transition:leave-start="right-0"
-    x-transition:leave-end="opacity-[-100%]" style="background-image: url('./public/images/footer-bg.svg');"
-    class=" md:hidden absolute right-0 z-50 top-0 bottom-0 h-screen ml-auto w-9/12 bg-white shadow-2xl backdrop-blur-4xl drop-shadow-2xl  bg-cover transition-all duration-300 ease-linear">
-    <div class="flex justify-between items-center p-6">
-      <img class="h-6 w-auto" src="./public/images/small-logo.svg" alt="logo" />
-      <button class="text-white size-5 text-3xl" @click="toggle()">
-        <i class="bi bi-x"></i>
-      </button>
-    </div>
+  <template x-if="true">
+    <aside x-show="isOpen" x-transition:enter="transition ease-out duration-300"
+      x-transition:enter-start="right-[-100%]" x-transition:enter-end="right-0"
+      x-transition:leave="transition ease-in duration-300" x-transition:leave-start="right-0"
+      x-transition:leave-end="opacity-[-100%]" style="background-image: url('./public/images/footer-bg.svg');"
+      class=" md:hidden absolute right-0 z-50 top-0 bottom-0 h-screen ml-auto w-9/12 bg-white shadow-2xl backdrop-blur-4xl drop-shadow-2xl  bg-cover transition-all duration-300 ease-linear">
+      <div class="flex justify-between items-center p-6">
+        <img class="h-6 w-auto" src="./public/images/small-logo.svg" alt="logo" />
+        <button class="text-white size-5 text-3xl" @click="toggle()">
+          <i class="bi bi-x"></i>
+        </button>
+      </div>
 
-    <nav class="text-white px-6">
-      <ul class="flex flex-col gap-8">
-        <li>
-          <a class="font-medium text-base" href="/">Products</a>
-        </li>
-        <li>
-          <a class="font-medium text-base" href="/">About</a>
-        </li>
-        <li>
-          <a class="font-medium text-base" href="/">Rates</a>
-        </li>
-        <li>
-          <a class="font-medium text-base" href="/">Flexible savings</a>
-        </li>
-        <li>
-          <a class="font-medium text-base" href="/">Premium tiers</a>
-        </li>
-        <li>
-          <a class="font-medium text-base" href="/"></a>
-        </li>
-      </ul>
-    </nav>
-  </aside>
+      <nav class="text-white px-6">
+        <ul class="flex flex-col gap-8">
+          <li>
+            <a class="font-medium text-base" href="/">Products</a>
+          </li>
+          <li>
+            <a class="font-medium text-base" href="/">About</a>
+          </li>
+          <li>
+            <a class="font-medium text-base" href="/">Rates</a>
+          </li>
+          <li>
+            <a class="font-medium text-base" href="/">Flexible savings</a>
+          </li>
+          <li>
+            <a class="font-medium text-base" href="/">Premium tiers</a>
+          </li>
+          <li>
+            <a class="font-medium text-base" href="/"></a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+  </template>
+
 
   <main>
     <section id="hero-section"

@@ -407,3 +407,8 @@ document.addEventListener('alpine:init', () => {
     ],
   }))
 })
+
+AOS.init({
+  once: true,
+  easing: 'ease-in-out',
+})

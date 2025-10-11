@@ -40,7 +40,8 @@
 </head>
 
 <body class="bg-[#f6f6f6] overflow-x-hidden relative" x-data="menu()">
-  <header class="py-6 w-full lg:py-7 bg-transparent md:bg-white bg-cover bg-top">
+  <header
+    class="py-6 w-full lg:py-7 bg-gradient-to-r from-[#ecfade] md:from-white md:via-white md:to-white via-[#fdfff8] to-[#ecfade]  bg-cover bg-top">
     <div class="container px-4 mx-auto flex justify-between items-center ">
       <div class="flex items-center justify-center lg:justify-start gap-10">
         <a href="/" class="h-6 w-auto">
@@ -213,7 +214,7 @@
         </p>
       </div>
 
-      <div class="grid grid-cols-2 lg:grid-cols-4 py-16 lg:py-36 gap-6">
+      <div class="grid grid-cols-2 lg:grid-cols-4 py-16 lg:py-36 gap-12 lg:gap-6">
         <div
           class="flex flex-col justify-center items-center space-y-4 md:space-y-8 w-full md:p-[40px] 2xl:p-[68px] mx-auto md:border-r border-color lg:h-[170px]">
           <div data-aos="fade-up" class="w-full">
@@ -770,8 +771,9 @@
                 <div x-data="{isOpen:false}" class="w-full  rounded-2xl p-6 bg-white mb-4">
                   <button class="flex justify-between items-start outline-none w-full" @click="isOpen = !isOpen">
                     <span class="flex items-center gap-3">
-                      <img class="size-7" :src="item.image" alt="verified" />
-                      <span class="font-semibold text-base text-left leading-[150%] tracking-[-2%] text-color"
+                      <img class="size-6 md:size-7" :src="item.image" alt="verified" />
+                      <span
+                        class="font-semibold text-sm md:text-base text-left leading-[150%] tracking-[-2%] text-color"
                         x-text="item.title"></span>
                     </span>
                     <span class="block">
@@ -800,8 +802,8 @@
                 <button class="flex justify-between items-start cursor-pointer outline-none w-full"
                   @click="isOpen = !isOpen">
                   <span class="flex items-center gap-3">
-                    <img class="size-4 md:size-7" :src="item.image" alt="verified" />
-                    <span class="font-semibold text-xs md:text-base text-left leading-[150%] tracking-[-2%] text-color"
+                    <img class="size-5 md:size-7" :src="item.image" alt="verified" />
+                    <span class="font-semibold text-base text-left leading-[150%] tracking-[-2%] text-color"
                       x-text="item.title"></span>
                   </span>
                   <span class="block">
@@ -827,7 +829,7 @@
           class="text-center enable-trig w-32  px-4 py-2 rounded-full text-xs font-medium border border-color bg-lime-100">
           Comparison
         </div>
-        <h3 class=" font-bold te text-2xl md:text-5xl leading-[110%] tracking-[-5%] text-color">
+        <h3 class="font-bold text-3xl md:text-5xl leading-[110%] tracking-[-5%] text-color">
           More Than a Bank. <br />
           Smarter Than DeFi.
         </h3>
@@ -1261,8 +1263,9 @@
                 <div x-data="{isOpen:false}" class="w-full  rounded-2xl p-6 bg-white mb-4">
                   <button class="flex justify-between items-start outline-none w-full" @click="isOpen = !isOpen">
                     <span class="flex items-center gap-3">
-                      <img class="size-7" :src="item.image" alt="verified" />
-                      <span class="font-semibold text-base text-left leading-[150%] tracking-[-2%] text-color"
+                      <img class="size-5 md:ize-7" :src="item.image" alt="verified" />
+                      <span
+                        class="font-semibold text-sm md:text-base text-left leading-[150%] tracking-[-2%] text-color"
                         x-text="item.title"></span>
                     </span>
                     <span class="block">
@@ -1365,15 +1368,16 @@
       <div class="container mx-auto pl-4 pr-0 md:pl-4 md:pr-4 md:pb-28 pt-28 pb-6">
         <div class="flex md:flex-row flex-col justify-between items-center gap-10 md:gap-28">
           <div>
-            <div class="enable-trig">
-              <h1 class="font-bold text-4xl md:text-4xl lg:text-[56px] leading-[100%] tracking-[-5%] text-color ">
+            <div>
+              <h1
+                class="font-bold pr-4 md:pr-0 text-4xl md:text-4xl lg:text-[56px] leading-[100%] tracking-[-5%] text-color ">
                 Exclusive Yields. Built for Serious Investors
               </h1>
             </div>
 
-            <div class="pt-8 md:pt-4 lg:pt-8">
+            <div class="pt-8 md:pt-4 pr-4 md:pr-0 lg:pt-8">
               <ul class="list-none space-y-2">
-                <li class="enable-trig">
+                <li>
                   <span>
                     <span class="flex items-center gap-2">
                       <img class="size-4" src="./public/images/check-circle.svg" />
@@ -1383,7 +1387,7 @@
                     </span>
                   </span>
                 </li>
-                <li class="enable-trig">
+                <li>
                   <span>
                     <span class="flex items-center gap-2">
                       <img class="size-4" src="./public/images/check-circle.svg" />
@@ -1393,7 +1397,7 @@
                     </span>
                   </span>
                 </li>
-                <li class="enable-trig">
+                <li>
                   <span>
                     <span class="flex items-center gap-2">
                       <img class="size-4" src="./public/images/check-circle.svg" />

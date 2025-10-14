@@ -71,8 +71,8 @@
         </nav>
       </div>
       <div class="flex items-center justify-center gap-3 lg:gap-6">
-        <a href="/" class="text-base hidden lg:block font-semibold">Sign Up</a>
-        <a href="/" class="button">Login</a>
+        <a href="https://uex.us/register" class="text-base hidden lg:block font-semibold">Sign Up</a>
+        <a href="https://uex.us/login" class="button">Login</a>
         <button
           class="lg:hidden text-2xl hover:bg-lime-500 active:scale-95 scale-100 transition-all ease-linear duration-150"
           @click="toggle()" aria-label="Toggle mobile menu" aria-expanded="false">
@@ -152,6 +152,18 @@
             <form onsubmit="event.preventDefault()" class="space-y-6">
               <div class="space-y-[6px]">
                 <label for="email" class="font-semibold text-xs">Email</label>
+                <div class="flex justify-between items-center gap-3">
+                  <input id="first-name" name="first-name" type="text" placeholder="eg.John" required
+                    aria-describedby="first-name-error"
+                    class="w-full text-base px-2 border focus-visible:outline-1 focus-visible:outline-[#0015451A] transition-all ease-linear duration-150 rounded-lg h-9 border-color" />
+                  <input id="last-name" name="last-name" type="text" placeholder="eg. Doe" required
+                    aria-describedby="last-name-error"
+                    class="w-full text-base px-2 border focus-visible:outline-1 focus-visible:outline-[#0015451A] transition-all ease-linear duration-150 rounded-lg h-9 border-color" />
+                </div>
+
+              </div>
+              <div class="space-y-[6px]">
+                <label for="email" class="font-semibold text-xs">Email</label>
                 <input id="email" name="email" type="email" placeholder="eg. john@example.com" required
                   aria-describedby="email-error"
                   class="w-full text-base px-2 border focus-visible:outline-1 focus-visible:outline-[#0015451A] transition-all ease-linear duration-150 rounded-lg h-9 border-color" />
@@ -187,11 +199,11 @@
             <p class="font-medium text-base leading-[150%] tracking-[-2%] text-color mb-6">
               Schdule a call with our sales team to lean more and explore excludive custom long-term saving tiers.
             </p>
-            <button class="button-secondary w-full flex items-center justify-center gap-2"
+            <a href="https://uex.us/v2/savings" class="button-secondary w-full flex items-center justify-center gap-2"
               aria-label="Schedule a consultation to learn more about UEX loans">
               <span>Schedule A Consultation Now</span>
               <i class="bi bi-arrow-right-short text-lg"></i>
-            </button>
+            </a>
           </div>
         </div>
 
@@ -203,7 +215,7 @@
       <div class="flex flex-col md:flex-row justify-center items-center md:gap-8 gap-4">
         <div class="md:w-[500px] ml-auto">
           <h2
-            class="font-semibold text-4xl md:w-3/4 xl:w-1/2 leading-[110%] tracking-[-5%] text-color text-left md:text-left">
+            class="font-semibold text-4xl md:w-3/4 xl:w-1/2 lg:min-w-[400px] leading-[110%] tracking-[-5%] text-color text-left md:text-left">
             Powerful savings solutions for you
           </h2>
         </div>
@@ -299,10 +311,10 @@
       </div>
 
       <div data-aos="fade-up" data-aos-delay="450" class=" flex justify-start md:justify-center items-center">
-        <button class="button " aria-label="Apply for a UEX savings account">
+        <a href="https://uex.us/v2/savings" class="button " aria-label="Apply for a UEX savings account">
           <span>Apply For A Savings Account</span>
           <i class="bi bi-arrow-right-short text-lg"></i>
-        </button>
+        </a>
       </div>
     </section>
 
@@ -360,7 +372,8 @@
                     <input class="border-color border outline-none rounded-lg p-2 text-[10px] md:text-xs w-full"
                       placeholder="1,200 USD" value="1,200 USD" />
                   </div>
-                  <button class="button mt-2 text-[6px] md:text-xs w-full" aria-label="Deposit USD">Deposit</button>
+                  <a class="button block text-center mt-2 text-[6px] md:text-xs w-full" aria-label="Deposit USD"
+                    href="https://uex.us/v2/savings">Deposit</a>
                 </div>
               </div>
             </div>
@@ -403,7 +416,9 @@
                     </div>
                   </div>
 
-                  <button class="button mt-2 text-[6px] md:text-xs w-full" aria-label="Convert crypto">Convert</button>
+                  <a href="https://uex.us/v2/savings" class="button block text-center mt-2 text-[6px] md:text-xs w-full"
+                    aria-label="Convert crypto">Convert</a>
+
                 </div>
 
               </div>
@@ -561,14 +576,14 @@
                       </div>
                     </div>
 
-                    <button type="submit"
-                      class="bg-lime-500 active:scale-95 scale-100 hover:bg-lime-400 transition-all ease-linear duration-150 rounded-full px-4 mt-12 font-medium leading-[150%] tracking-[-5%] text-xs flex justify-center items-center gap-2 py-0.5">
+                    <a href="https://uex.us/v2/savings"
+                      class="bg-lime-500 w-24 active:scale-95 scale-100 hover:bg-lime-400 transition-all ease-linear duration-150 rounded-full px-4 mt-12 font-medium leading-[150%] tracking-[-5%] text-xs flex justify-center items-center gap-2 py-0.5">
                       <span>
 
                         Close
                       </span>
                       <i class="bi bi-arrow-right-short text-lg"></i>
-                    </button>
+                    </a>
                   </div>
 
                 </div>
@@ -626,14 +641,14 @@
                     </div>
                   </div>
 
-                  <button type="submit"
-                    class="bg-lime-500 active:scale-95 scale-100 hover:bg-lime-400 transition-all ease-linear duration-150 rounded-full px-4 mt-12 font-medium leading-[150%] tracking-[-5%] text-xs flex justify-center items-center gap-2 py-0.5">
+                  <a href="https://uex.us/v2/savings"
+                    class="bg-lime-500 w-24 active:scale-95 scale-100 hover:bg-lime-400 transition-all ease-linear duration-150 rounded-full px-4 mt-12 font-medium leading-[150%] tracking-[-5%] text-xs flex justify-center items-center gap-2 py-0.5">
                     <span>
 
                       Close
                     </span>
                     <i class="bi bi-arrow-right-short text-lg"></i>
-                  </button>
+                  </a>
                 </div>
               </div>
 
@@ -690,7 +705,8 @@
                     <input class="border-color border outline-none rounded-lg p-2 text-[10px] md:text-xs w-full"
                       placeholder="1,200 USD" value="1,200 USD" />
                   </div>
-                  <button class="button mt-2 text-[6px] md:text-xs w-full" aria-label="Deposit funds">Deposit</button>
+                  <a href="https://uex.us/v2/savings" class="button block text-center mt-2 text-[6px] md:text-xs w-full"
+                    aria-label="Deposit funds">Deposit</a>
                 </div>
               </div>
             </div>
@@ -776,14 +792,14 @@
                         class="font-semibold text-sm md:text-base text-left leading-[150%] tracking-[-2%] text-color"
                         x-text="item.title"></span>
                     </span>
-                    <span class="block">
+                    <!-- <span class="block">
                       <i :class="{ 'bi bi-dash': isOpen, 'bi bi-plus-lg': !isOpen }" class="text-color"></i>
-                    </span>
+                    </span> -->
                   </button>
-                  <div x-show="isOpen" x-transition:enter.duration.500ms x-transition:leave.duration.300ms class="mt-4">
+                  <!-- <div x-show="isOpen" x-transition:enter.duration.500ms x-transition:leave.duration.300ms class="mt-4">
                     <p class="font-medium text-base leading-[150%] tracking-[-2%] text-[#585858]"
                       x-text="item.description"></p>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </template>
@@ -1136,11 +1152,11 @@
         </div>
       </div>
       <div class="flex justify-center items-center">
-        <button class="button flex items-center justify-center gap-2"
+        <a href="https://uex.us/v2/savings" class="button flex items-center justify-center gap-2"
           aria-label="Schedule a call to learn more about UEX pricing">
           <span>Schedule A Call To Learn More</span>
           <i class="bi bi-arrow-right-short text-lg"></i>
-        </button>
+        </a>
       </div>
 
     </section>
@@ -1152,16 +1168,15 @@
         <div class="block lg:hidden w-full">
           <div class="space-y-4 md:mb-0 flex flex-col pb-4 md:pb-6">
             <div
-              class="text-center enable-trig w-20  px-4 py-2 rounded-full text-xs font-medium border border-color bg-lime-100">
-              Earn
+              class="text-center enable-trig w-56  px-4 py-2 rounded-full text-xs font-medium border border-color bg-lime-100">
+              Estimate Your Earnings Instantly
             </div>
             <h3 class=" font-bold te text-2xl md:text-5xl leading-[110%] tracking-[-5%] text-color">
-              Lorem ipsum dolor sit amet
+              Use our interactive calculator to see how your balance could grow with EX Savings
             </h3>
             <p class=" font-medium text-xs md:text-base leading-[150%] tracking-[-2%] text-[#585858]">
-              Lorem ipsum dolor sit amet consectetur. Praesent sit dui volutpat dignissim nunc vitae auctor. Varius
-              congue potenti eget vitae. Nulla tempor sollicitudin sem eget tellus proin suspendisse. Quis mi integer
-              est et.
+              Earn 5% APY on fiat and 3.5% APY on crypto. Enter your deposit amount and watch your potential earnings
+              update in real time.
             </p>
           </div>
         </div>
@@ -1234,7 +1249,8 @@
                 </span>
               </div>
               <button
-                class="mt-2 rounded-xl text-xs w-full bg-lime-500 active:scale-95 scale-100 hover:bg-lime-400 transition-all ease-linear duration-150 font-semibold px-6 py-3">Deposit</button>
+                class="mt-2 rounded-xl text-xs w-full bg-lime-500 active:scale-95 scale-100 hover:bg-lime-400 transition-all ease-linear duration-150 font-semibold px-6 py-3">
+                Deposit</button>
             </div>
           </div>
 
@@ -1244,16 +1260,15 @@
           <div class="w-full hidden lg:block">
             <div class="space-y-4 mb-11 md:mb-0 flex flex-col pb-4 md:pb-6">
               <div
-                class="text-center enable-trig w-20  px-4 py-2 rounded-full text-xs font-medium border border-color bg-lime-100">
-                Earn
+                class="text-center enable-trig w-56  px-4 py-2 rounded-full text-xs font-medium border border-color bg-lime-100">
+                Estimate Your Earnings Instantly
               </div>
               <h3 class=" font-bold te text-2xl md:text-5xl leading-[110%] tracking-[-5%] text-color">
-                Lorem ipsum dolor sit amet
+                Use our interactive calculator to see how your balance could grow with EX Savings
               </h3>
               <p class=" font-medium text-xs md:text-base leading-[150%] tracking-[-2%] text-[#585858]">
-                Lorem ipsum dolor sit amet consectetur. Praesent sit dui volutpat dignissim nunc vitae auctor. Varius
-                congue potenti eget vitae. Nulla tempor sollicitudin sem eget tellus proin suspendisse. Quis mi integer
-                est et.
+                Earn 5% APY on fiat and 3.5% APY on crypto. Enter your deposit amount and watch your potential earnings
+                update in real time.
               </p>
             </div>
           </div>
@@ -1268,14 +1283,14 @@
                         class="font-semibold text-sm md:text-base text-left leading-[150%] tracking-[-2%] text-color"
                         x-text="item.title"></span>
                     </span>
-                    <span class="block">
+                    <!-- <span class="block">
                       <i :class="{ 'bi bi-dash': isOpen, 'bi bi-plus-lg': !isOpen }" class="text-color"></i>
-                    </span>
+                    </span> -->
                   </button>
-                  <div x-show="isOpen" x-transition:enter.duration.500ms x-transition:leave.duration.300ms class="mt-4">
+                  <!-- <div x-show="isOpen" x-transition:enter.duration.500ms x-transition:leave.duration.300ms class="mt-4">
                     <p class="font-medium text-base leading-[150%] tracking-[-2%] text-[#585858]"
                       x-text="item.description"></p>
-                  </div>
+                  </div> -->
                 </div>
               </div>
             </template>
@@ -1285,7 +1300,7 @@
 
 
     <!-- investor's Say -->
-    <section class="container mx-auto py-20 px-4">
+    <section class="hidden container mx-auto py-20 px-4">
       <div class="flex flex-col justify-center items-start md:items-center gap-4 pb-4 md:pb-6">
         <div class=" px-4 py-2 rounded-full text-xs font-medium border border-color bg-lime-100">
           Testimonials

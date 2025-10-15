@@ -18,6 +18,22 @@ window.addEventListener('resize', () => {
   setHeroBackground()
 })
 
+// Projected Balance Calculator Function
+function projectedBalance({ principal, apy, days }) {
+  const n = 365 // compounding frequency (daily)
+  const t = days / 365 // time in years
+  const A = principal * Math.pow(1 + apy / n, n * t)
+  return {
+    balance: A,
+    earnings: A - principal,
+  }
+}
+
+// Example usage:
+// const P = 1000; const days = 365; const fiat = projectedBalance({ principal: P, apy: 0.05, days });
+// const crypto = projectedBalance({ principal: P, apy: 0.035, days });
+// Display outputs: fiat.balance, fiat.earnings, crypto.balance, crypto.earnings
+
 document.addEventListener('alpine:init', () => {
   Alpine.store('comparison', {
     activeTab: 2,
@@ -90,6 +106,8 @@ document.addEventListener('alpine:init', () => {
     progress: 50,
     tooltipPosition: 0,
     sliderWidth: 0,
+    apy: 0.05,
+    days: 30,
 
     init() {
       this.$watch('value', () => {
@@ -144,6 +162,16 @@ document.addEventListener('alpine:init', () => {
     updateTooltipPosition() {
       // Legacy method for compatibility - just call the fast version
       this.updateTooltipPositionFast()
+    },
+    projectedBalance() {
+      const principal = this.value
+      const n = 365 // compounding frequency (daily)
+      const t = this.days / 365 // time in years
+      const A = principal * Math.pow(1 + this.apy / n, n * t)
+      return {
+        balance: A,
+        earnings: A - principal,
+      }
     },
   }))
 

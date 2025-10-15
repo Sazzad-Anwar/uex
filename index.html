@@ -96,22 +96,22 @@
       <nav class="text-white px-6">
         <ul class="flex flex-col gap-8">
           <li>
-            <a class="font-medium text-base" href="/">Products</a>
+            <a class="font-medium text-base" @click="toggle()" href="#products">Products</a>
           </li>
           <li>
-            <a class="font-medium text-base" href="/">About</a>
+            <a class="font-medium text-base" @click="toggle()" href="#process">Process</a>
           </li>
           <li>
-            <a class="font-medium text-base" href="/">Rates</a>
+            <a class="font-medium text-base" @click="toggle()" href="#rates">Rates</a>
           </li>
           <li>
-            <a class="font-medium text-base" href="/">Flexible savings</a>
+            <a class="font-medium text-base" @click="toggle()" href="#savings">Flexible savings</a>
           </li>
           <li>
-            <a class="font-medium text-base" href="/">Premium tiers</a>
+            <a class="font-medium text-base" @click="toggle()" href="#comparison">Comparison</a>
           </li>
           <li>
-            <a class="font-medium text-base" href="/">Contact</a>
+            <a class="font-medium text-base" @click="toggle()" href="#estimate">Estimate earning</a>
           </li>
         </ul>
       </nav>
@@ -1503,174 +1503,37 @@
                 LINKS
               </li>
               <li>
-                <a href="#"
+                <a href="#products"
                   class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
                   Products
                 </a>
               </li>
               <li>
-                <a href="#"
+                <a href="#process"
                   class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
-                  About
+                  Process
                 </a>
               </li>
               <li>
-                <a href="#"
+                <a href="#savings"
                   class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
-                  Rates
+                  Flexible savings
                 </a>
               </li>
               <li>
-                <a href="#"
+                <a href="#comparison"
                   class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
-                  Flexible Savings
+                  Comparison
                 </a>
               </li>
               <li>
-                <a href="#"
+                <a href="#estimate"
                   class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
-                  Premium tiers
-                </a>
-              </li>
-              <li>
-                <a href="#"
-                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
-                  Institutional
+                  Estimate earning
                 </a>
               </li>
             </ul>
 
-          </div>
-          <div class="space-y-4 mb-10 md:mb-0">
-            <ul class="list-none space-y-4">
-              <li class="font-medium text-sm leading-[100%] tracking-[2%] text-[#AFAFAF]">
-                LINKS
-              </li>
-              <li>
-                <a href="#"
-                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
-                  Products
-                </a>
-              </li>
-              <li>
-                <a href="#"
-                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#"
-                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
-                  Rates
-                </a>
-              </li>
-              <li>
-                <a href="#"
-                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
-                  Flexible Savings
-                </a>
-              </li>
-              <li>
-                <a href="#"
-                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
-                  Premium tiers
-                </a>
-              </li>
-              <li>
-                <a href="#"
-                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
-                  Institutional
-                </a>
-              </li>
-            </ul>
-
-          </div>
-          <div class="space-y-4 mb-10 md:mb-0">
-            <ul class="list-none space-y-4">
-              <li class="font-medium text-sm leading-[100%] tracking-[2%] text-[#AFAFAF]">
-                LINKS
-              </li>
-              <li>
-                <a href="#"
-                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
-                  Products
-                </a>
-              </li>
-              <li>
-                <a href="#"
-                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#"
-                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
-                  Rates
-                </a>
-              </li>
-              <li>
-                <a href="#"
-                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
-                  Flexible Savings
-                </a>
-              </li>
-              <li>
-                <a href="#"
-                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
-                  Premium tiers
-                </a>
-              </li>
-              <li>
-                <a href="#"
-                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
-                  Institutional
-                </a>
-              </li>
-            </ul>
-
-          </div>
-          <div class="space-y-4 mb-10 md:mb-0">
-            <ul class="list-none space-y-4">
-              <li class="font-medium text-sm leading-[100%] tracking-[2%] text-[#AFAFAF]">
-                LINKS
-              </li>
-              <li>
-                <a href="#"
-                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
-                  Products
-                </a>
-              </li>
-              <li>
-                <a href="#"
-                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
-                  About
-                </a>
-              </li>
-              <li>
-                <a href="#"
-                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
-                  Rates
-                </a>
-              </li>
-              <li>
-                <a href="#"
-                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
-                  Flexible Savings
-                </a>
-              </li>
-              <li>
-                <a href="#"
-                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
-                  Premium tiers
-                </a>
-              </li>
-              <li>
-                <a href="#"
-                  class="hover:text-lime-500 transition-all duration-150 ease-linear font-semibold text-base leading-[100%] tracking-[2%] text-white">
-                  Institutional
-                </a>
-              </li>
-            </ul>
           </div>
         </div>
         <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-10">

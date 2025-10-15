@@ -466,17 +466,8 @@
   .h-\[350px\] {
     height: 350px;
   }
-  .h-\[400px\] {
-    height: 400px;
-  }
-  .h-\[500px\] {
-    height: 500px;
-  }
   .h-\[550px\] {
     height: 550px;
-  }
-  .h-\[600px\] {
-    height: 600px;
   }
   .h-auto {
     height: auto;
@@ -547,20 +538,8 @@
   .w-\[220px\] {
     width: 220px;
   }
-  .w-\[260px\] {
-    width: 260px;
-  }
-  .w-\[300px\] {
-    width: 300px;
-  }
   .w-\[340px\] {
     width: 340px;
-  }
-  .w-\[360px\] {
-    width: 360px;
-  }
-  .w-\[400px\] {
-    width: 400px;
   }
   .w-auto {
     width: auto;
@@ -739,9 +718,6 @@
   .rounded-lg {
     border-radius: var(--radius-lg);
   }
-  .rounded-md {
-    border-radius: var(--radius-md);
-  }
   .rounded-xl {
     border-radius: var(--radius-xl);
   }
@@ -846,17 +822,8 @@
   .bg-\[\#f6f6f6\] {
     background-color: #f6f6f6;
   }
-  .bg-black\/10 {
-    background-color: color-mix(in srgb, #000 10%, transparent);
-    @supports (color: color-mix(in lab, red, red)) {
-      background-color: color-mix(in oklab, var(--color-black) 10%, transparent);
-    }
-  }
   .bg-gray-200 {
     background-color: var(--color-gray-200);
-  }
-  .bg-gray-400 {
-    background-color: var(--color-gray-400);
   }
   .bg-lime-100 {
     background-color: var(--color-lime-100);
@@ -912,9 +879,6 @@
   }
   .bg-top {
     background-position: top;
-  }
-  .p-1 {
-    padding: calc(var(--spacing) * 1);
   }
   .p-2 {
     padding: calc(var(--spacing) * 2);
@@ -1093,10 +1057,6 @@
   .leading-\[150\%\] {
     --tw-leading: 150%;
     line-height: 150%;
-  }
-  .leading-\[160\%\] {
-    --tw-leading: 160%;
-    line-height: 160%;
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
@@ -1453,11 +1413,6 @@
       width: 250px;
     }
   }
-  .md\:w-\[260px\] {
-    @media (width >= 48rem) {
-      width: 260px;
-    }
-  }
   .md\:w-\[500px\] {
     @media (width >= 48rem) {
       width: 500px;
@@ -1590,11 +1545,6 @@
   .md\:p-\[40px\] {
     @media (width >= 48rem) {
       padding: 40px;
-    }
-  }
-  .md\:px-32 {
-    @media (width >= 48rem) {
-      padding-inline: calc(var(--spacing) * 32);
     }
   }
   .md\:py-7 {

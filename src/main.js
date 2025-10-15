@@ -1,3 +1,9 @@
+/**
+ * @fileoverview Main JavaScript file for UEX website functionality
+ * @description Initializes Alpine.js stores and components for responsive hero backgrounds,
+ * comparison tables, FAQ sections, range sliders, testimonials, and navigation
+ */
+
 const heroSection = document.getElementById('hero-section')
 
 const setHeroBackground = () => {
@@ -18,23 +24,20 @@ window.addEventListener('resize', () => {
   setHeroBackground()
 })
 
-// Projected Balance Calculator Function
-function projectedBalance({ principal, apy, days }) {
-  const n = 365 // compounding frequency (daily)
-  const t = days / 365 // time in years
-  const A = principal * Math.pow(1 + apy / n, n * t)
-  return {
-    balance: A,
-    earnings: A - principal,
-  }
-}
-
-// Example usage:
-// const P = 1000; const days = 365; const fiat = projectedBalance({ principal: P, apy: 0.05, days });
-// const crypto = projectedBalance({ principal: P, apy: 0.035, days });
-// Display outputs: fiat.balance, fiat.earnings, crypto.balance, crypto.earnings
-
 document.addEventListener('alpine:init', () => {
+  /**
+   * Alpine.js store for managing comparison table data and active tab state
+   * @namespace comparison
+   * @property {number} activeTab - Currently active tab ID (default: 2)
+   * @property {Array<Object>} tabs - Array of tab objects containing comparison data
+   * @property {number} tabs[].id - Unique identifier for the tab
+   * @property {string} tabs[].title - Display title for the tab
+   * @property {Array<Object>} [tabs[].data] - Optional array of comparison data for the tab
+   * @property {string} [tabs[].data[].usdYield] - USD yield percentage
+   * @property {string} [tabs[].data[].cryptoYield] - Crypto yield percentage
+   * @property {string} [tabs[].data[].lockUps] - Lock-up period information
+   * @property {boolean} [tabs[].data[].withdrawAnytime] - Whether withdrawal is allowed anytime
+   */
   Alpine.store('comparison', {
     activeTab: 2,
     tabs: [
@@ -59,46 +62,76 @@ document.addEventListener('alpine:init', () => {
         title: 'Traditional Bank',
       },
     ],
-  }),
-    Alpine.store('dailySavings', {
-      faq: [
-        {
-          title: 'U.S. MSB-registered.',
-          description:
-            'Grog seven yer locker overhaul crack. Tales black hang me coast gar. Parrel splice hearties or nipperkin bucko. Tea gabion prey blow seven dead. Lubber.',
-          image: './public/images/verified.svg',
-          isOpen: true,
-        },
-        {
-          title:
-            'Institutional-grade custody: multi-sig cold storage, encrypted transactions.',
-          description:
-            'Grog seven yer locker overhaul crack. Tales black hang me coast gar. Parrel splice hearties or nipperkin bucko. Tea gabion prey blow seven dead. Lubber.',
-          image: './public/images/lock.svg',
-          isOpen: false,
-        },
-        {
-          title:
-            'Yields powered by collateralized loans and hedging — not risky DeFi farms',
-          description:
-            'Grog seven yer locker overhaul crack. Tales black hang me coast gar. Parrel splice hearties or nipperkin bucko. Tea gabion prey blow seven dead. Lubber.',
-          image: './public/images/hand.svg',
-          isOpen: false,
-        },
-        {
-          title: 'Continuous audits + segregated funds',
-          image: './public/images/search.svg',
-          description:
-            'Grog seven yer locker overhaul crack. Tales black hang me coast gar. Parrel splice hearties or nipperkin bucko. Tea gabion prey blow seven dead. Lubber.',
-          isOpen: false,
-        },
-      ],
-      toggle(index) {
-        this.faq[index].isOpen = !this.faq[index].isOpen
-      },
-    })
+  })
 
-  // Range Slider Component
+  /**
+   * Alpine.js store for managing daily savings FAQ section
+   * @namespace dailySavings
+   * @property {Array<Object>} faq - Array of FAQ items with security and feature information
+   * @property {string} faq[].title - FAQ item title/question
+   * @property {string} faq[].description - FAQ item description/answer
+   * @property {string} faq[].image - Path to the FAQ item icon/image
+   * @property {boolean} faq[].isOpen - Whether the FAQ item is expanded (default: false, first item true)
+   * @method toggle - Toggles the open/closed state of an FAQ item by index
+   * @param {number} index - Index of the FAQ item to toggle
+   */
+  Alpine.store('dailySavings', {
+    faq: [
+      {
+        title: 'U.S. MSB-registered.',
+        description:
+          'Grog seven yer locker overhaul crack. Tales black hang me coast gar. Parrel splice hearties or nipperkin bucko. Tea gabion prey blow seven dead. Lubber.',
+        image: './public/images/verified.svg',
+        isOpen: true,
+      },
+      {
+        title:
+          'Institutional-grade custody: multi-sig cold storage, encrypted transactions.',
+        description:
+          'Grog seven yer locker overhaul crack. Tales black hang me coast gar. Parrel splice hearties or nipperkin bucko. Tea gabion prey blow seven dead. Lubber.',
+        image: './public/images/lock.svg',
+        isOpen: false,
+      },
+      {
+        title:
+          'Yields powered by collateralized loans and hedging — not risky DeFi farms',
+        description:
+          'Grog seven yer locker overhaul crack. Tales black hang me coast gar. Parrel splice hearties or nipperkin bucko. Tea gabion prey blow seven dead. Lubber.',
+        image: './public/images/hand.svg',
+        isOpen: false,
+      },
+      {
+        title: 'Continuous audits + segregated funds',
+        image: './public/images/search.svg',
+        description:
+          'Grog seven yer locker overhaul crack. Tales black hang me coast gar. Parrel splice hearties or nipperkin bucko. Tea gabion prey blow seven dead. Lubber.',
+        isOpen: false,
+      },
+    ],
+    toggle(index) {
+      this.faq[index].isOpen = !this.faq[index].isOpen
+    },
+  })
+
+  /**
+   * Alpine.js component for interactive range slider with financial calculations
+   * @namespace rangeSlider
+   * @property {number} value - Current slider value (default: 20000)
+   * @property {number} min - Minimum slider value (default: 0)
+   * @property {number} max - Maximum slider value (default: 40000)
+   * @property {number} progress - Current progress percentage (0-100)
+   * @property {number} tooltipPosition - Tooltip position in pixels
+   * @property {number} sliderWidth - Cached slider width in pixels
+   * @property {number} apy - Annual percentage yield (default: 0.05)
+   * @property {number} days - Number of days for calculation (default: 30)
+   * @method init - Initializes the component and sets up watchers and event listeners
+   * @method cacheSliderWidth - Caches the slider element width for position calculations
+   * @method updateProgress - Updates the progress percentage based on current value
+   * @method updateTooltipPositionFast - Calculates and updates tooltip position efficiently
+   * @method updateTooltipPosition - Legacy method for tooltip positioning (calls fast version)
+   * @method projectedBalance - Calculates projected balance and earnings based on compound interest
+   * @returns {Object} Object with balance and earnings properties
+   */
   Alpine.data('rangeSlider', () => ({
     value: 20000,
     min: 0,
@@ -175,7 +208,23 @@ document.addEventListener('alpine:init', () => {
     },
   }))
 
-  // Masonry Testimonials Component
+  /**
+   * Alpine.js component for masonry layout testimonials with show more functionality
+   * @namespace masonryTestimonials
+   * @property {boolean} showAll - Whether to show all testimonials or limited set
+   * @property {number} visibleCount - Number of testimonials to show initially (default: 9)
+   * @property {Array<Object>} testimonials - Array of testimonial objects
+   * @property {string} testimonials[].name - Testimonial author name
+   * @property {string} testimonials[].position - Author's job title/position
+   * @property {string} testimonials[].content - Testimonial content/review text
+   * @property {string} testimonials[].avatar - Path to author's avatar image
+   * @property {string} [testimonials[].image] - Optional testimonial background image
+   * @property {number} testimonials[].rating - Star rating (1-5)
+   * @property {string} testimonials[].size - Testimonial card size ('small', 'medium', 'large')
+   * @method init - Initializes component and randomly assigns images to some testimonials
+   * @getter visibleTestimonials - Returns array of testimonials to display based on visibleCount
+   * @method toggleShowAll - Toggles between showing all testimonials and limited set
+   */
   Alpine.data('masonryTestimonials', () => ({
     showAll: false,
     visibleCount: 9,
@@ -389,12 +438,28 @@ document.addEventListener('alpine:init', () => {
       this.showAll = !this.showAll
     },
   }))
+
+  /**
+   * Alpine.js component for mobile menu toggle functionality
+   * @namespace menu
+   * @property {boolean} isOpen - Whether the mobile menu is open
+   * @method toggle - Toggles the open/closed state of the mobile menu
+   */
   Alpine.data('menu', () => ({
     isOpen: false,
     toggle() {
       this.isOpen = !this.isOpen
     },
   }))
+
+  /**
+   * Alpine.js component for social media links data
+   * @namespace socialLinks
+   * @property {Array<Object>} links - Array of social media link objects
+   * @property {string} links[].name - Social media platform name
+   * @property {string} links[].url - URL to the social media profile
+   * @property {string} links[].icon - Path to the social media icon image
+   */
   Alpine.data('socialLinks', () => ({
     links: [
       {

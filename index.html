@@ -1179,9 +1179,9 @@
         </div>
 
         <div x-data="rangeSlider()"
-          class="bg-[#D6E6E8] w-full lg:w-[40%] h-[400px] lg:min-h-[725px] rounded-2xl flex justify-center items-center px-32">
+          class="bg-[#D6E6E8] w-full lg:w-[40%] h-[550px] lg:min-h-[725px] rounded-2xl flex justify-center items-center px-32">
           <div data-aos="fade-up">
-            <div class="p-4  rounded-lg bg-white w-[260px] lg:w-[360px] shadow-xl">
+            <div class="p-4  rounded-lg bg-white w-[340px] lg:w-[360px] shadow-xl">
               <div class="flex justify-between items-start">
                 <div class="space-y-1">
                   <p class="font-semibold text-[10px] md:text-xs leading-[150%] tracking-[-2%] text-color">
@@ -1242,9 +1242,10 @@
 
                 <div class="space-y-3 mt-3">
                   <div class="flex justify-between items-center">
-                    <label for="apy" class="text-base w-5/12 font-semibold tracking-[-2%] text-color">Rate (APY)</label>
-                    <select id="apy" name="apy"
-                      class="border border-gray-300 w-7/12 rounded-xl border-color p-3 text-sm font-semibold tracking-[-2%] text-color">
+                    <label for="apy" class="text-xs md:text-base w-5/12 font-semibold tracking-[-2%] text-color">Rate
+                      (APY)</label>
+                    <select id="apy" name="apy" x-model="apy"
+                      class="border border-gray-300 w-7/12 rounded-xl border-color p-3 text-xs md:text-sm font-semibold tracking-[-2%] text-color">
                       <option value="0.05">Fiat - 5% APY</option>
                       <option value="0.035">Crypto - 3.5% APY</option>
                     </select>
@@ -1252,9 +1253,9 @@
                   <hr class="text-black/10" />
                   <div class="flex justify-between items-center">
                     <label for="duration"
-                      class="text-base w-5/12 font-semibold tracking-[-2%] text-color">Duration</label>
-                    <select id="duration" name="duration"
-                      class="border border-gray-300 w-7/12 rounded-xl border-color p-3 text-sm font-semibold tracking-[-2%] text-color">
+                      class="text-xs md:text-base w-5/12 font-semibold tracking-[-2%] text-color">Duration</label>
+                    <select id="duration" name="duration" x-model="days"
+                      class="border border-gray-300 w-7/12 rounded-xl border-color p-3 text-xs md:text-sm font-semibold tracking-[-2%] text-color">
                       <option value="7"> 7 Days</option>
                       <option value="30">30 Days</option>
                       <option value="90">90 Days</option>
@@ -1268,14 +1269,18 @@
 
               <div class="mt-7 space-y-3">
                 <span
-                  class="w-full p-3 flex justify-between items-center rounded-xl bg-[#F2F2F2] text-base font-semibold leading-[100%] tracking-[-2%] text-color">
-                  <span class="font-semibold text-base tracking-[-2%] text-color">Estimated Earnings</span>
-                  <span x-text="`${value.toLocaleString()} USD`" class="text-[#626262]"></span>
+                  class="w-full p-3 flex justify-between items-center rounded-xl bg-[#F2F2F2] text-xs md:text-base font-semibold leading-[100%] tracking-[-2%] text-color">
+                  <span class="text-color">Estimated Earnings</span>
+                  <span
+                    x-text="`${projectedBalance().earnings.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`"
+                    class="text-[#626262]"></span>
                 </span>
                 <span
-                  class="w-full p-3 flex justify-between items-center rounded-xl bg-[#F2F2F2] text-base font-semibold leading-[100%] tracking-[-2%] text-color">
-                  <span class="font-semibold text-base tracking-[-2%] text-color">Projected Balance</span>
-                  <span x-text="`${value.toLocaleString()} USD`" class="text-[#626262]"></span>
+                  class="w-full p-3 flex justify-between items-center rounded-xl bg-[#F2F2F2] text-xs md:text-base font-semibold leading-[100%] tracking-[-2%] text-color">
+                  <span class="text-color">Projected Balance</span>
+                  <span
+                    x-text="`${projectedBalance().balance.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2})} USD`"
+                    class="text-[#626262]"></span>
                 </span>
               </div>
               <button
